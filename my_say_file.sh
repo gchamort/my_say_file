@@ -1,5 +1,4 @@
 #!/bin/bash
-# gchamort
 
 ## fonction de diction;
 ## affiche la ligne puis la dicte
