@@ -5,7 +5,7 @@
 speehsay () {
     echo $line
     echo ""
-    say --progress $line
+    say $line
 }
 
 input="./$1"
@@ -14,14 +14,15 @@ if [ -f "$input" ]; then
   # si le fichier existe
   while IFS= read -r line
   do
-    # dicter ligne par ligne
+    # fait les bails
     speehsay $line
   done < "$input"
+else
+  # si le fichier n'existe pas diplay un message d'info
+  echo "Usage : passer un fichier text en paramètre pour être lu"
 fi
 
-
-sleep 1
-## potite blague: check si user est root
+# potite blague: check si user est root
 if [[ $EUID -ne 0 ]]; then
     sleep 0
 else
@@ -30,4 +31,4 @@ else
 fi
 
 sleep 1
-#end
+# end
